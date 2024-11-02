@@ -1,5 +1,5 @@
 import unittest
-from statistics_service import StatisticsService
+from statistics_service import StatisticsService, SortBy
 from player import Player
 
 class PlayerReaderStub:
@@ -30,3 +30,6 @@ class TestStatisticsService(unittest.TestCase):
 
     def test_top(self):
         self.assertIsNotNone(self.stats.top(4))
+        self.assertIsNotNone(self.stats.top(4, SortBy.GOALS))
+        self.assertIsNotNone(self.stats.top(4,SortBy.POINTS))
+        self.assertIsNotNone(self.stats.top(4, SortBy.ASSISTS))
