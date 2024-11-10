@@ -1,14 +1,18 @@
 from player_reader import PlayerReader
 from player_stats import PlayerStats
+from rich.console import Console
 
 def main():
-    url = "https://studies.cs.helsinki.fi/nhlstats/2023-24/players"
+    console = Console()
+    season = input("Select season: ")
+    url = f"https://studies.cs.helsinki.fi/nhlstats/{season}/players"
     reader = PlayerReader(url)
     stats = PlayerStats(reader)
-    players = stats.top_scorers_by_nationality("FIN")
 
-    for player in players:
-        print(player)
+    while True:
+        nationality = input("Select nationality: ")
+        players = stats.top_scorers_by_nationality(nationality,season)
+        console.print(players)
 
 
 main()
