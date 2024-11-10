@@ -6,7 +6,6 @@ def main():
     response = requests.get(url).json()
 
     print("JSON-muotoinen vastaus:")
-    print(response)
 
     players = []
 
@@ -14,8 +13,10 @@ def main():
         player = Player(player_dict)
         players.append(player)
 
-    print("Oliot:")
-
+    players.sort(key=lambda x: x.assists + x.goals,reverse=True)
+    print("Players from FIN\n")
     for player in players:
-        print(player)
+        if player.nationality == "FIN":
+            print(player)
 
+main()
