@@ -2,3 +2,6 @@ __pycache__
 *.tmp
 .coverage
 .venv
+log.html
+output.xml
+report.html
