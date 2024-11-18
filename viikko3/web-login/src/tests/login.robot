@@ -17,8 +17,14 @@ Login With Incorrect Password
     Submit Credentials
     Login Should Fail With Message  Invalid username or password
 
+Login With Nonexistent Username
+    Set Username  abababab
+    Set Password  ababa
+    Submit Credentials
+    Login Should Fail With Message  Invalid username or password
+
 *** Keywords ***
-Login Should Succeed
+Login Should Succeedc
     Main Page Should Be Open
 
 Login Should Fail With Message
