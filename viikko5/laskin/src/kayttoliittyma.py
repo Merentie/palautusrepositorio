@@ -32,6 +32,15 @@ class Nollaus():
     def suorita(self):
         self.sovelluslogiikka.nollaa()
 
+class Kumoa():
+    def __init__(self, sovelluslogiikka, syote):
+        self.sovelluslogiikka = sovelluslogiikka
+        self.syote = syote
+
+    def suorita(self):
+        self.sovelluslogiikka.edellinen()
+
+
 class Kayttoliittyma:
     def __init__(self, sovelluslogiikka, root):
         self._sovelluslogiikka = sovelluslogiikka
@@ -41,8 +50,8 @@ class Kayttoliittyma:
         self._komennot = {
             Komento.SUMMA: Summa(sovelluslogiikka, self._lue_syote),
             Komento.EROTUS: Erotus(sovelluslogiikka, self._lue_syote),
-            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote)
-            # Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote) # ei ehkä tarvita täällä...
+            Komento.NOLLAUS: Nollaus(sovelluslogiikka, self._lue_syote),
+            Komento.KUMOA: Kumoa(sovelluslogiikka, self._lue_syote)
         }
 
 
