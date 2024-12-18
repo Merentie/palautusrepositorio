@@ -15,26 +15,17 @@ def main():
         vastaus = input()
 
         if vastaus.endswith("a"):
-            print(
-                "Peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s"
-            )
-
             kaksinpeli = KPSPelaajaVsPelaaja()
             kaksinpeli.pelaa()
-        elif vastaus.endswith("b"):
-            print(
-                "Peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s"
-            )
 
+        elif vastaus.endswith("b"):
             yksinpeli = KPSTekoaly()
             yksinpeli.pelaa()
-        elif vastaus.endswith("c"):
-            print(
-                "Peli loppuu kun pelaaja antaa virheellisen siirron eli jonkun muun kuin k, p tai s"
-            )
 
+        elif vastaus.endswith("c"):
             haastava_yksinpeli = KPSParempiTekoaly()
             haastava_yksinpeli.pelaa()
+        
         else:
             break
 
